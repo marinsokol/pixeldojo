@@ -1,0 +1,196 @@
+---
+import { ArrowLeft, ArrowRight, CheckCircle2 } from '@lucide/astro';
+import Layout from '../../components/Layout.astro';
+import { servicesData } from '../../data/services';
+
+export function getStaticPaths() {
+  return Object.keys(servicesData).map((service) => ({
+    params: { id: service },
+  }));
+}
+
+const { id } = Astro.params;
+
+const service = servicesData[id];
+const ServiceIcon = service.icon;
+---
+
+<Layout>
+  <main class="min-h-screen overflow-hidden bg-black text-white">
+    <div class="scanline"></div>
+
+    <div class="grid-bg fixed inset-0 -z-10"></div>
+
+    <header class="border-b border-[#ffffff10] py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <a href="/#services" class="group flex items-center">
+            <ArrowLeft
+              class="mr-2 transition-transform group-hover:translate-x-[-5px]"
+              style={{ color: service.color }}
+            />
+            <span class="font-mono tracking-wider uppercase" style={{ color: service.color }}>
+              Return_To_Services
+            </span>
+          </a>
+          <h1 class="glitch-text text-2xl font-bold" data-text="SERVICE_DETAILS">
+            <span
+              class="bg-gradient-to-r from-[#ff00ff] to-[#00ffff] bg-clip-text text-transparent"
+            >
+              SERVICE_DETAILS
+            </span>
+          </h1>
+          <a href="/" class="group flex items-center">
+            <span class="font-mono tracking-wider text-[#00ffff] uppercase">Main_Menu</span>
+            <ArrowRight
+              class="ml-2 text-[#00ffff] transition-transform group-hover:translate-x-[5px]"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="relative overflow-hidden py-16">
+      <div class="absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-black to-transparent">
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="mb-16 text-center">
+          <div class="mb-6 inline-block" style={{ color: service.color }}>
+            <ServiceIcon size={64} />
+          </div>
+          <h2 class="glitch-text mb-4 text-4xl font-black md:text-6xl" data-text={service.title}>
+            <span
+              class="bg-gradient-to-r from-white bg-clip-text text-transparent"
+              style={{ backgroundImage: `linear-gradient(to right, white, ${service.color})` }}
+            >
+              {service.title}
+            </span>
+          </h2>
+          <div class="mx-auto h-1 w-40" style={{ backgroundColor: service.color }}></div>
+          <p class="mx-auto mt-8 max-w-3xl text-xl text-gray-300">{service.longDescription}</p>
+        </div>
+
+        <div class="mb-24">
+          <div class="mb-8 flex items-center justify-center">
+            <div class="mr-4 h-6 w-6" style={{ backgroundColor: service.color }}></div>
+            <h3 class="font-mono text-2xl tracking-wider uppercase">Core_Features</h3>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {
+              service.features.map((feature, index) => (
+                <div class="group relative">
+                  <div
+                    class="absolute -inset-1 opacity-30 blur transition-opacity group-hover:opacity-100"
+                    style={{
+                      backgroundImage: `linear-gradient(to right, ${service.color}, #00ffff)`,
+                    }}
+                  />
+                  <div class="relative border border-[#ffffff30] bg-black p-6">
+                    <div class="flex items-start">
+                      <CheckCircle2
+                        class="mt-1 mr-3 h-5 w-5 flex-shrink-0"
+                        style={{ color: service.color }}
+                      />
+                      <span class="text-gray-200">{feature}</span>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mb-24">
+          <div class="mb-8 flex items-center justify-center">
+            <div class="mr-4 h-6 w-6" style={{ backgroundColor: service.color }}></div>
+            <h3 class="font-mono text-2xl tracking-wider uppercase">Our_Process</h3>
+          </div>
+
+          <div class="relative">
+            <div class="absolute top-0 bottom-0 left-1/2 w-px bg-[#ffffff30]"></div>
+            <div class="space-y-16">
+              {
+                service.process.map((step, index) => (
+                  <div
+                    class={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+                  >
+                    <div
+                      class={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}
+                    >
+                      <h4 class="mb-2 text-xl font-bold" style={{ color: service.color }}>
+                        {step.title}
+                      </h4>
+                      <p class="text-gray-300">{step.description}</p>
+                    </div>
+                    <div class="relative">
+                      <div
+                        class="absolute -inset-3 rounded-full opacity-30 blur"
+                        style={{ backgroundColor: service.color }}
+                      />
+                      <div
+                        class="relative flex h-10 w-10 items-center justify-center rounded-full border-2"
+                        style={{ borderColor: service.color }}
+                      >
+                        <span class="font-bold">{index + 1}</span>
+                      </div>
+                    </div>
+                    <div class="w-1/2" />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-24">
+          <div class="mb-8 flex items-center justify-center">
+            <div class="mr-4 h-6 w-6" style={{ backgroundColor: service.color }}></div>
+            <h3 class="font-mono text-2xl tracking-wider uppercase">Technologies</h3>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            {
+              service.technologies.map((tech) => (
+                <div
+                  class="border px-4 py-2 font-mono text-sm transition-colors hover:bg-[#ffffff10]"
+                  style={{ borderColor: service.color, color: service.color }}
+                >
+                  {tech}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="relative inline-block">
+            <div
+              class="absolute -inset-1 opacity-50 blur"
+              style={{ backgroundImage: `linear-gradient(to right, ${service.color}, #00ffff)` }}
+            >
+            </div>
+            <a
+              href="/#contact"
+              class="relative inline-block border bg-transparent px-8 py-3 font-mono tracking-wider uppercase transition-colors hover:bg-[#ffffff10]"
+              style={{ borderColor: service.color, color: service.color }}
+            >
+              <span>Discuss_Your_Project</span>
+              <div
+                class="absolute top-0 right-0 h-2 w-2"
+                style={{ backgroundColor: service.color }}
+              >
+              </div>
+              <div
+                class="absolute bottom-0 left-0 h-2 w-2"
+                style={{ backgroundColor: service.color }}
+              >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
