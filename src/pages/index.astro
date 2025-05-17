@@ -1,16 +1,79 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+  <a rel="icon" type="image/svg+xml" href="/favicon.svg"></a>
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>PixelDojo - Digital Architects</title>
+  <meta name="description" content="PixelDojo - Digital Architects" /></head>
+
+
+  <body class={`bg-black text-white`}>
+    <header
+      class="py-4 sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-[#ffffff10]"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-xl font-mono flex items-center">
+            <div class="w-4 h-4 bg-[#ff00ff] mr-2"></div>
+            PixelDojo_
+          </a>
+          <nav class="hidden md:flex gap-8">
+            <a
+              href="/#services"
+              class="font-mono text-gray-400 hover:text-[#00ffff] transition-colors"
+            >
+              Services_
+            </a>
+            <a
+              href="/#projects"
+              class="font-mono text-gray-400 hover:text-[#ff00ff] transition-colors"
+            >
+              Projects_
+            </a>
+            <a
+              href="/#contact"
+              class="font-mono text-gray-400 hover:text-[#ffff00] transition-colors"
+            >
+              Contact_
+            </a>
+          </nav>
+          <a
+            href="/#contact"
+            class="border border-[#00ffff] text-[#00ffff] px-4 py-2 font-mono hover:bg-[#00ffff20] transition-colors"
+          >
+            Connect_
+          </a>
+        </div>
+      </div>
+    </header>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <footer class="py-8 border-t border-[#ffffff10] mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="font-mono text-sm text-gray-500">
+            © {new Date().getFullYear()} PixelDojo. All rights reserved.
+          </p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a
+              href="/legal-info"
+              class="font-mono text-sm text-gray-500 hover:text-[#00ffff]"
+            >
+              Legal_Info
+            </a>
+            <a
+              href="/privacy-policy"
+              class="font-mono text-sm text-gray-500 hover:text-[#00ffff]"
+            >
+              Privacy_Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
