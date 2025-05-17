@@ -1,79 +1,513 @@
 ---
-import "../styles/global.css";
+import { Image } from 'astro:assets';
+import Layout from '../components/Layout.astro';
+import { ArrowRight, Code, Smartphone, Rocket, ShoppingCart } from '@lucide/astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-  <a rel="icon" type="image/svg+xml" href="/favicon.svg"></a>
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <title>PixelDojo - Digital Architects</title>
-  <meta name="description" content="PixelDojo - Digital Architects" /></head>
+<Layout>
+  <main class="min-h-screen overflow-hidden bg-black font-mono text-white">
+    <div class="scanline"></div>
+    <div class="grid-bg fixed inset-0 -z-10"></div>
 
-
-  <body class={`bg-black text-white`}>
-    <header
-      class="py-4 sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-[#ffffff10]"
-    >
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
-          <a href="/" class="text-xl font-mono flex items-center">
-            <div class="w-4 h-4 bg-[#ff00ff] mr-2"></div>
-            PixelDojo_
-          </a>
-          <nav class="hidden md:flex gap-8">
-            <a
-              href="/#services"
-              class="font-mono text-gray-400 hover:text-[#00ffff] transition-colors"
-            >
-              Services_
-            </a>
-            <a
-              href="/#projects"
-              class="font-mono text-gray-400 hover:text-[#ff00ff] transition-colors"
-            >
-              Projects_
-            </a>
-            <a
-              href="/#contact"
-              class="font-mono text-gray-400 hover:text-[#ffff00] transition-colors"
-            >
-              Contact_
-            </a>
-          </nav>
-          <a
-            href="/#contact"
-            class="border border-[#00ffff] text-[#00ffff] px-4 py-2 font-mono hover:bg-[#00ffff20] transition-colors"
-          >
-            Connect_
-          </a>
+    <section class="relative overflow-hidden py-32">
+      <div class="absolute top-0 left-0 h-full w-full">
+        <div
+          class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#ff00ff20] to-transparent opacity-20"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 h-full w-full bg-gradient-to-t from-[#00ffff20] to-transparent opacity-20"
+        >
         </div>
       </div>
-    </header>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    <footer class="py-8 border-t border-[#ffffff10] mt-auto">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="font-mono text-sm text-gray-500">
-            © {new Date().getFullYear()} PixelDojo. All rights reserved.
+
+      <div class="relative container mx-auto px-4">
+        <div class="mx-auto max-w-5xl">
+          <div class="mb-8 flex items-center">
+            <div class="mr-4 h-8 w-8 bg-[#ff00ff]"></div>
+            <h3 class="font-mono text-xl tracking-widest uppercase">PixelDojo_</h3>
+          </div>
+
+          <h1
+            class="glitch-text mb-8 text-6xl font-black md:text-8xl"
+            data-text="DIGITAL ARCHITECTS"
+          >
+            <span
+              class="bg-gradient-to-r from-[#ff00ff] to-[#00ffff] bg-clip-text text-transparent"
+            >
+              DIGITAL ARCHITECTS
+            </span>
+          </h1>
+
+          <div class="mb-12 flex flex-wrap gap-4">
+            <div class="border border-[#ff00ff] px-4 py-1 font-mono text-[#ff00ff]">WEB</div>
+            <div class="border border-[#00ffff] px-4 py-1 font-mono text-[#00ffff]">MOBILE</div>
+            <div class="border border-[#ffff00] px-4 py-1 font-mono text-[#ffff00]">E-COMMERCE</div>
+            <div class="border border-white px-4 py-1 font-mono">DIGITAL STRATEGY</div>
+          </div>
+
+          <p class="mb-12 max-w-2xl text-xl leading-relaxed font-light md:text-2xl">
+            We don't just build websites and apps. We{' '}
+            <span class="font-bold text-[#00ffff]">hack the digital matrix</span> to create experiences
+            that{' '}
+            <span class="font-bold text-[#ff00ff]">break the conventional</span>.
           </p>
-          <div class="flex gap-6 mt-4 md:mt-0">
+
+          <div class="flex flex-wrap gap-6">
             <a
-              href="/legal-info"
-              class="font-mono text-sm text-gray-500 hover:text-[#00ffff]"
+              href="#contact"
+              class="group relative border border-[#ff00ff] bg-transparent px-8 py-3 transition-colors hover:bg-[#ff00ff20]"
             >
-              Legal_Info
+              <span class="relative z-10 font-mono tracking-wider uppercase"
+                >Initialize Project</span
+              >
+              <div class="absolute top-0 right-0 h-2 w-2 bg-[#ff00ff]"></div>
+              <div class="absolute bottom-0 left-0 h-2 w-2 bg-[#ff00ff]"></div>
             </a>
+
             <a
-              href="/privacy-policy"
-              class="font-mono text-sm text-gray-500 hover:text-[#00ffff]"
+              href="#services"
+              class="group relative border border-[#00ffff] bg-transparent px-8 py-3 transition-colors hover:bg-[#00ffff20]"
             >
-              Privacy_Policy
+              <span class="relative z-10 font-mono tracking-wider uppercase"
+                >Explore Capabilities</span
+              >
+              <div class="absolute top-0 right-0 h-2 w-2 bg-[#00ffff]"></div>
+              <div class="absolute bottom-0 left-0 h-2 w-2 bg-[#00ffff]"></div>
             </a>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
-</html>
+
+      <div class="absolute bottom-0 left-0 h-20 w-full bg-gradient-to-t from-black to-transparent">
+      </div>
+      <div class="absolute -bottom-10 left-0 w-full border-b border-[#00ffff30]"></div>
+      <div class="absolute -bottom-12 left-0 w-full border-b border-[#ff00ff30]"></div>
+    </section>
+
+    <section id="services" class="relative py-32">
+      <div class="absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-black to-transparent">
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="mb-20">
+          <div class="mb-4 flex items-center">
+            <div class="mr-4 h-6 w-6 bg-[#00ffff]"></div>
+            <h3 class="font-mono text-lg tracking-widest text-[#00ffff] uppercase">
+              System_Functions
+            </h3>
+          </div>
+          <h2 class="mb-4 text-4xl font-black md:text-5xl">
+            <span class="bg-gradient-to-r from-white to-[#00ffff] bg-clip-text text-transparent">
+              DIGITAL CAPABILITIES
+            </span>
+          </h2>
+          <div class="h-1 w-40 bg-[#00ffff]"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#ff00ff] to-[#00ffff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative border border-[#ffffff30] bg-black p-8">
+              <div class="mb-6 text-[#00ffff]">
+                <Code size={32} />
+              </div>
+              <h3 class="mb-4 text-2xl font-bold transition-colors group-hover:text-[#00ffff]">
+                Web Applications
+              </h3>
+              <p class="mb-6 text-gray-400">
+                We build responsive, high-performance web applications using modern technologies
+                that deliver exceptional user experiences.
+              </p>
+              <ul class="mb-6 space-y-2 text-gray-400">
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#00ffff]"></span>
+                  <span>React & Next.js</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#00ffff]"></span>
+                  <span>Custom E-commerce</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#00ffff]"></span>
+                  <span>Web Portals & Dashboards</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="inline-flex items-center font-mono text-sm tracking-wider text-[#00ffff] uppercase hover:text-white"
+              >
+                Access_Details <ArrowRight class="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#00ffff] to-[#ff00ff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative border border-[#ffffff30] bg-black p-8">
+              <div class="mb-6 text-[#ff00ff]">
+                <Smartphone size={32} />
+              </div>
+              <h3 class="mb-4 text-2xl font-bold transition-colors group-hover:text-[#ff00ff]">
+                Mobile Applications
+              </h3>
+              <p class="mb-6 text-gray-400">
+                Native and cross-platform mobile apps that provide seamless experiences across iOS
+                and Android devices.
+              </p>
+              <ul class="mb-6 space-y-2 text-gray-400">
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ff00ff]"></span>
+                  <span>React Native</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ff00ff]"></span>
+                  <span>Native iOS & Android</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ff00ff]"></span>
+                  <span>App Store Optimization</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="inline-flex items-center font-mono text-sm tracking-wider text-[#ff00ff] uppercase hover:text-white"
+              >
+                Access_Details <ArrowRight class="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#ffff00] to-[#00ffff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative border border-[#ffffff30] bg-black p-8">
+              <div class="mb-6 text-[#ffff00]">
+                <ShoppingCart size={32} />
+              </div>
+              <h3 class="mb-4 text-2xl font-bold transition-colors group-hover:text-[#ffff00]">
+                E-commerce Solutions
+              </h3>
+              <p class="mb-6 text-gray-400">
+                Custom online stores that convert visitors into customers with seamless shopping
+                experiences.
+              </p>
+              <ul class="mb-6 space-y-2 text-gray-400">
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ffff00]"></span>
+                  <span>Shopify Development</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ffff00]"></span>
+                  <span>WooCommerce</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-[#ffff00]"></span>
+                  <span>Custom Shopping Carts</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="inline-flex items-center font-mono text-sm tracking-wider text-[#ffff00] uppercase hover:text-white"
+              >
+                Access_Details <ArrowRight class="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-white to-[#ff00ff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative border border-[#ffffff30] bg-black p-8">
+              <div class="mb-6 text-white">
+                <Rocket size={32} />
+              </div>
+              <h3 class="mb-4 text-2xl font-bold transition-colors group-hover:text-white">
+                Digital Strategy
+              </h3>
+              <p class="mb-6 text-gray-400">
+                Strategic planning and execution to maximize your digital presence and achieve
+                business goals.
+              </p>
+              <ul class="mb-6 space-y-2 text-gray-400">
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-white"></span>
+                  <span>UX/UI Design</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-white"></span>
+                  <span>SEO Optimization</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-1 w-1 bg-white"></span>
+                  <span>Analytics & Reporting</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="inline-flex items-center font-mono text-sm tracking-wider text-white uppercase hover:text-[#ff00ff]"
+              >
+                Access_Details <ArrowRight class="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="relative py-32">
+      <div class="absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-black to-transparent">
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="mb-20">
+          <div class="mb-4 flex items-center">
+            <div class="mr-4 h-6 w-6 bg-[#ff00ff]"></div>
+            <h3 class="font-mono text-lg tracking-widest text-[#ff00ff] uppercase">
+              Executed_Programs
+            </h3>
+          </div>
+          <h2 class="mb-4 text-4xl font-black md:text-5xl">
+            <span class="bg-gradient-to-r from-white to-[#ff00ff] bg-clip-text text-transparent">
+              DIGITAL ARTIFACTS
+            </span>
+          </h2>
+          <div class="h-1 w-40 bg-[#ff00ff]"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Project 1 */}
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#ff00ff] to-[#00ffff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative overflow-hidden border border-[#ffffff30] bg-black">
+              <div class="relative h-[300px] overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=300&width=500"
+                  alt="E-commerce Project"
+                  width={500}
+                  height={300}
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60">
+                </div>
+                <div class="absolute top-4 left-4 bg-[#ff00ff] px-2 py-1 font-mono text-xs">
+                  E-COMMERCE
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="mb-2 text-xl font-bold transition-colors group-hover:text-[#ff00ff]">
+                  FashionFusion Store
+                </h3>
+                <p class="mb-4 text-gray-400">
+                  A custom Shopify store with unique product customization features.
+                </p>
+                <a
+                  href="/unusual/projects/1"
+                  class="inline-flex items-center font-mono text-sm tracking-wider text-[#ff00ff] uppercase"
+                >
+                  View_Details <ArrowRight class="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 2 */}
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#00ffff] to-[#ffff00] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative overflow-hidden border border-[#ffffff30] bg-black">
+              <div class="relative h-[300px] overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=300&width=500"
+                  alt="Mobile App Project"
+                  width={500}
+                  height={300}
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60">
+                </div>
+                <div
+                  class="absolute top-4 left-4 bg-[#00ffff] px-2 py-1 font-mono text-xs text-black"
+                >
+                  MOBILE APP
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="mb-2 text-xl font-bold transition-colors group-hover:text-[#00ffff]">
+                  FitTrack Pro
+                </h3>
+                <p class="mb-4 text-gray-400">
+                  Fitness tracking app with social features and personalized workout plans.
+                </p>
+                <a
+                  href="/unusual/projects/2"
+                  class="inline-flex items-center font-mono text-sm tracking-wider text-[#00ffff] uppercase"
+                >
+                  View_Details <ArrowRight class="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 */}
+          <div class="group relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#ffff00] to-[#ff00ff] opacity-30 blur transition-opacity group-hover:opacity-100"
+            >
+            </div>
+            <div class="relative overflow-hidden border border-[#ffffff30] bg-black">
+              <div class="relative h-[300px] overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=300&width=500"
+                  alt="Web App Project"
+                  width={500}
+                  height={300}
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60">
+                </div>
+                <div
+                  class="absolute top-4 left-4 bg-[#ffff00] px-2 py-1 font-mono text-xs text-black"
+                >
+                  WEB APP
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="mb-2 text-xl font-bold transition-colors group-hover:text-[#ffff00]">
+                  DashboardX
+                </h3>
+                <p class="mb-4 text-gray-400">
+                  Analytics dashboard with real-time data visualization and reporting.
+                </p>
+                <a
+                  href="/unusual/projects/3"
+                  class="inline-flex items-center font-mono text-sm tracking-wider text-[#ffff00] uppercase"
+                >
+                  View_Details <ArrowRight class="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <a
+            href="/unusual/projects"
+            class="group relative inline-block border border-white bg-transparent px-8 py-3 font-mono tracking-wider uppercase transition-colors hover:bg-white hover:text-black"
+          >
+            <span>Access_All_Projects</span>
+            <div class="absolute top-0 right-0 h-2 w-2 bg-white"></div>
+            <div class="absolute bottom-0 left-0 h-2 w-2 bg-white"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="relative py-32">
+      <div class="absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-black to-transparent">
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-3xl">
+          <div class="mb-16">
+            <div class="mb-4 flex items-center">
+              <div class="mr-4 h-6 w-6 bg-[#00ffff]"></div>
+              <h3 class="font-mono text-lg tracking-widest text-[#00ffff] uppercase">
+                Initialize_Connection
+              </h3>
+            </div>
+            <h2 class="mb-4 text-4xl font-black md:text-5xl">
+              <span
+                class="bg-gradient-to-r from-[#00ffff] to-[#ff00ff] bg-clip-text text-transparent"
+              >
+                START TRANSMISSION
+              </span>
+            </h2>
+            <div class="h-1 w-40 bg-gradient-to-r from-[#00ffff] to-[#ff00ff]"></div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-[#ff00ff] to-[#00ffff] opacity-50 blur"
+            >
+            </div>
+            <div class="relative border border-[#ffffff30] bg-black p-8">
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <label class="mb-2 block font-mono text-sm tracking-wider uppercase"
+                      >Identifier</label
+                    >
+                    <input
+                      type="text"
+                      class="w-full border border-[#ffffff30] bg-black p-3 transition-colors focus:border-[#00ffff] focus:outline-none"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label class="mb-2 block font-mono text-sm tracking-wider uppercase">
+                      Communication_Channel
+                    </label>
+                    <input
+                      type="email"
+                      class="w-full border border-[#ffffff30] bg-black p-3 transition-colors focus:border-[#00ffff] focus:outline-none"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="mb-2 block font-mono text-sm tracking-wider uppercase">
+                    Project_Classification
+                  </label>
+                  <select
+                    class="w-full border border-[#ffffff30] bg-black p-3 transition-colors focus:border-[#00ffff] focus:outline-none"
+                  >
+                    <option value="">Select project type</option>
+                    <option value="web">Web Application</option>
+                    <option value="mobile">Mobile Application</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="mb-2 block font-mono text-sm tracking-wider uppercase">
+                    Transmission_Content
+                  </label>
+                  <textarea
+                    class="h-32 w-full border border-[#ffffff30] bg-black p-3 transition-colors focus:border-[#00ffff] focus:outline-none"
+                    placeholder="Tell us about your project"></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="group relative w-full border border-[#ff00ff] bg-transparent px-8 py-3 font-mono tracking-wider text-[#ff00ff] uppercase transition-colors hover:bg-[#ff00ff20] md:w-auto"
+                >
+                  <span>Transmit_Message</span>
+                  <div class="absolute top-0 right-0 h-2 w-2 bg-[#ff00ff]"></div>
+                  <div class="absolute bottom-0 left-0 h-2 w-2 bg-[#ff00ff]"></div>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,100 @@
+---
+import '@fontsource/space-mono';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>PixelDojo - Digital Architects</title>
+    <meta
+      name="description"
+      content="We hack the digital matrix to create experiences that break the conventional."
+    />
+  </head>
+
+  <body class="bg-black font-mono text-white">
+    <header class="sticky top-0 z-50 border-b border-[#ffffff10] bg-black/50 py-4 backdrop-blur-md">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center font-mono text-xl">
+            <div class="mr-2 h-4 w-4 bg-[#ff00ff]"></div>
+            PixelDojo_
+          </a>
+          <nav class="hidden gap-8 md:flex">
+            <a
+              href="/#services"
+              class="font-mono text-gray-400 transition-colors hover:text-[#00ffff]"
+            >
+              Services_
+            </a>
+            <a
+              href="/#projects"
+              class="font-mono text-gray-400 transition-colors hover:text-[#ff00ff]"
+            >
+              Projects_
+            </a>
+            <a
+              href="/#contact"
+              class="font-mono text-gray-400 transition-colors hover:text-[#ffff00]"
+            >
+              Contact_
+            </a>
+          </nav>
+          <a
+            href="/#contact"
+            class="border border-[#00ffff] px-4 py-2 font-mono text-[#00ffff] transition-colors hover:bg-[#00ffff20]"
+          >
+            Connect_
+          </a>
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer class="border-t border-[#ffffff10] py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-start justify-between md:flex-row">
+          <div class="mb-8 md:mb-0">
+            <div class="mb-4 flex items-center">
+              <div class="mr-2 h-4 w-4 bg-[#ff00ff]"></div>
+              <h2 class="font-mono text-2xl">PixelDojo_</h2>
+            </div>
+            <p class="max-w-md text-gray-400">
+              Crafting exceptional digital experiences that break conventional boundaries.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-12 md:flex-row">
+            <div>
+              <h3 class="mb-4 font-mono text-lg tracking-wider uppercase">Contact_Info</h3>
+              <ul class="space-y-2 text-gray-400">
+                <li class="font-mono">hello@pixeldojo.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-8">
+          <div class="flex flex-col items-center justify-between md:flex-row">
+            <p class="font-mono text-sm text-gray-500">
+              © {new Date().getFullYear()} PixelDojo_Systems. All rights reserved.
+            </p>
+            <div class="mt-4 flex gap-6 md:mt-0">
+              <a href="/legal-info" class="font-mono text-sm text-gray-500 hover:text-[#00ffff]">
+                Legal_Info
+              </a>
+              <a
+                href="/privacy-policy"
+                class="font-mono text-sm text-gray-500 hover:text-[#00ffff]"
+              >
+                Privacy_Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
